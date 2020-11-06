@@ -17,7 +17,7 @@ function useLocalStorageState(
       const valueInLocalStore = window.localStorage.getItem(key)
       if (valueInLocalStore) {
         return deserialize(valueInLocalStore)
-      } 
+      }
       return typeof defaultValue === 'function' ? defaultValue() : defaultValue
     }
   )
