@@ -4,7 +4,7 @@
 
 import * as React from 'react'
 
-function useLocalStorageState(
+function useLocalStorageState( // we use the word "use" at the beggining for convention and avoiding warnings
   key,
   defaultValue = '',
   {
@@ -27,7 +27,7 @@ function useLocalStorageState(
 
   React.useEffect( ()=>{
     const prevKey = prevKeyRef.current
-    // check if previous key is different and removesIt
+    // check if previous key is different and removes it
     if(prevKey !== key){
       window.localStorage.removeItem(prevKey)
     }
