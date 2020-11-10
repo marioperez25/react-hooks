@@ -3,9 +3,11 @@
 
 import * as React from 'react'
 
+import {useLocalStorageState} from '../utils'
+
 function Board() {
   // 🐨 squares is the state for this component. Add useState for squares
-  const [squares , setSquares] = React.useState(Array(9).fill(null))
+  const [squares , setSquares] = useLocalStorageState('board', Array(9).fill(null))
 
   const nextValue = calculateNextValue(squares)
   const winner = calculateWinner(squares)
